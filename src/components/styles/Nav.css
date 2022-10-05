@@ -1,0 +1,42 @@
+ul {
+    display: flex;
+    justify-content: center;
+    background-color: var(--nav-bg-color);
+}
+
+li {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+
+    list-style: none;
+}
+
+li.active {
+    background-color: var(--nav-active-bg-color);
+}
+
+li:not(.active) {
+    background-color: var(--nav-item-bg-color);
+}
+
+li:hover, li:hover > a{
+    cursor: pointer;
+    color: var(--text-highlight-color);
+}
+
+li:not(.active):hover {
+    background-color: var(--nav-item-hl-bg-color);
+}
+
+li.active:hover {
+    background-color: var(--nav-active-hl-bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.locked:hover, .locked:hover > a {
+    cursor: not-allowed;
+}

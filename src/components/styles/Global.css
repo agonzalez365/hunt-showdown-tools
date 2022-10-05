@@ -1,0 +1,25 @@
+:root {
+    --text-color: #adb2b2;
+    --text-highlight-color: #faefed;
+
+    --nav-bg-color: #101010;
+    --nav-item-bg-color: #1a1919;
+    --nav-item-hl-bg-color: #393838;
+    --nav-active-bg-color: #54171c;
+    --nav-active-hl-bg-color: #6f2026;
+
+    --panel-color: #27292d;
+    --outline-color: #a8a9a8;
+
+    --main-bg-color: #070b12;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}

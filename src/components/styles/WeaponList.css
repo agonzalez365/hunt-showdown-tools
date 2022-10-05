@@ -1,0 +1,27 @@
+#weaponList {
+    width: 30%;
+
+    padding: 0.75rem;
+    margin: 0.75rem;
+    border-radius: 0.2rem;
+
+    background-color: var(--panel-color);
+}
+
+.weapon {
+    display: flex;
+
+    margin: 1rem;
+    padding: 0.5rem;
+
+    border-radius: 0.2rem;
+    outline: solid var(--outline-color);
+    background-color: var(--nav-item-bg-color);
+}
+
+.weapon:hover {
+    cursor: pointer;
+
+    background-color: var(--nav-item-hl-bg-color);
+    outline: solid var(--outline-color);
+}
