@@ -73,9 +73,38 @@ class WeaponPanel extends React.Component<
 	}
 
 	handleRangeUpdate = (rangeVal: number) => {
+		this.calcFalloff(rangeVal, this.state.damage, this.state.damageData);
 	}
 
 	handleHitboxUpdate = () => {
+
+	}
+
+	//todo: test after re-implementing slider
+	//todo: account for hitbox modifier
+	//damage data will contain sets of damage falloff data for each slope
+	//slopeStart
+	//slopeRange
+	//slopeChange
+	calcFalloff = (rangeVal: number, damage: number, damageData: Array<any>) => {
+		let falloff: number = 0;
+
+		for(let i = 0; i < damageData.length; i++) {
+			if(rangeVal > damageData[i]["slopeStart"]) {
+				let rangeAffected: number = rangeVal - damageData[i]["slopeStart"];
+
+				if(rangeAffected > damageData[i]["slopeRange"]) rangeAffected = damageData[i]["slopeRange"];
+
+				falloff += damageData[i]["slopeChange"] * rangeAffected;
+			}
+		}
+
+		let remainingDamage: number = damage - falloff;
+		if(remainingDamage < 0) remainingDamage = 0;
+		return remainingDamage;
+	}
+
+	calcAffectedRange = () => {
 
 	}
 

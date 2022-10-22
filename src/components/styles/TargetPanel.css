@@ -1,0 +1,59 @@
+#targetPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.75rem;
+  margin: 0.75rem;
+  border-radius: 0.2rem;
+
+  background-color: var(--panel-color);
+}
+
+#targetBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="radio"] {
+  appearance: none;
+  color: var(--main-bg-color);
+  background-color: white;
+  border: solid;
+  padding: 1rem;
+}
+
+input[type="radio"] {
+  appearance: none;
+  border: solid;
+  padding: 1rem;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--nav-active-bg-color);
+}
+
+input[type="radio"]:hover {
+  cursor: pointer;
+  background-color: var(--nav-active-hl-bg-color);
+}
+
+#fireBtn {
+  appearance: none;
+
+  padding: 0.25rem;
+
+  border: none;
+  border-radius: 0.2rem;
+  color: var(--text-color);
+  background-color: var(--nav-active-bg-color);
+}
+
+#fireBtn:hover {
+  color: var(--text-highlight-color);
+  background-color: var(--nav-active-hl-bg-color);
+  cursor: pointer;
+}
