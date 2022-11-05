@@ -1,0 +1,20 @@
+#statpanel {
+  width: 100vw;
+
+  padding: 0.75rem;
+  margin: 0.75rem;
+  border-radius: 0.2rem;
+
+  background-color: var(--panel-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pie {
+  height: 150px;
+  width: 150px;
+}

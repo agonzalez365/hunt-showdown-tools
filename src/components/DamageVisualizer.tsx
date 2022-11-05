@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles/Global.css'
-import './styles/App.css';
+import './styles/DamageVisualizer.css';
 import WeaponList from './WeaponList';
 import WeaponPanel from './WeaponPanel';
 import TargetPanel from './TargetPanel';
 
-class App extends React.Component {
+class DamageVisualizer extends React.Component {
 	render() {
 		return (
 			<main>
@@ -19,4 +19,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default DamageVisualizer;

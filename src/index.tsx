@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Nav from './components/Nav';
-import App from './components/App';
-import reportWebVitals from './reportWebVitals';
+import DamageVisualizer from './components/DamageVisualizer';
+import StatTracker from './components/StatTracker';
+import { BrowserRouter,  Routes} from 'react-router-dom';
+import { Route } from 'react-router';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Nav />
-    <App />
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path='damage-visualizer' element={<DamageVisualizer />}/>
+        <Route path='stat-tracker' element={<StatTracker />}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

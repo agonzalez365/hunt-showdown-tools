@@ -50,7 +50,15 @@ export const caldwellConversionUppercut: Weapon = new CaldwellConversion(
   AmmoType.LongPistol,
   [CustomAmmo.Incendiary, CustomAmmo.Explosive],
   126,
-  undefined,
+  [
+    {slopeStart: 20, slopeRange: 15, slopeChange: 0.8},
+    {slopeStart: 35, slopeRange: 25, slopeChange: 1.2},
+    {slopeStart: 60, slopeRange: 80, slopeChange: 0.75},
+    {slopeStart: 80, slopeRange: 100, slopeChange: 0.4},
+    {slopeStart: 100, slopeRange: 120, slopeChange: 0.85},
+    {slopeStart: 120, slopeRange: 380, slopeChange: 0.8421}
+    
+  ],
   undefined,
   undefined,
   40,

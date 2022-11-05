@@ -73,7 +73,6 @@ class WeaponPanel extends React.Component<
 	}
 
 	handleRangeUpdate = (rangeVal: number) => {
-		this.calcFalloff(rangeVal, this.state.damage, this.state.damageData);
 	}
 
 	handleHitboxUpdate = () => {
@@ -86,7 +85,7 @@ class WeaponPanel extends React.Component<
 	//slopeStart
 	//slopeRange
 	//slopeChange
-	calcFalloff = (rangeVal: number, damage: number, damageData: Array<any>) => {
+	calcFalloff = (rangeVal: number, damage: number, damageData: Array<object>) => {
 		let falloff: number = 0;
 
 		for(let i = 0; i < damageData.length; i++) {
@@ -118,7 +117,7 @@ class WeaponPanel extends React.Component<
 				<span>Ammo: </span>
 				<div id='mainStatContainer'>
 					<Bar statName='Damage' val={this.state.damage} maxVal={150} append={''} />
-					<RCSlider statName='Range' minVal={0} maxVal={500} append={'m'} />
+					<RCSlider statName='Range' minVal={0} maxVal={500} append={'m'} rangeHandler={this.handleRangeUpdate} />
 					<Bar statName='Rate of Fire' val={this.state.baseRpm} maxVal={400} append={'rpm'} />
 					<Bar statName='Handling' val={this.state.handling} maxVal={100} append={'%'} />
 					<Bar statName='Reload Speed' val={20} maxVal={30} append={'s'} />
@@ -152,11 +151,11 @@ class Bar extends React.Component<{ statName: string, val: number, maxVal: numbe
 	}
 }
 
-class RCSlider extends React.Component<{ statName: string, minVal: number, maxVal: number, append: string }, { value: number }> {
+class RCSlider extends React.Component<{ statName: string, minVal: number, maxVal: number, append: string, rangeHandler: any }, { value: number | number[] }> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
-			value: 0
+			value: 10
 		}
 	}
 
@@ -174,25 +173,24 @@ class RCSlider extends React.Component<{ statName: string, minVal: number, maxVa
 						step={1}
 						draggableTrack={true}
 						value={this.state.value}
-						// fix later -> https://www.npmjs.com/package/rc-slider
-						//onChange={(value[0]) => { this.setState({ value }/*this.setState({ value }); this.props.onRangeUpdate(value); */}}
+						onChange={(val) => { this.setState({ value: val }, this.props.rangeHandler(val)); }}
 						trackStyle={{
-							backgroundColor: '#faefed',
+							backgroundColor: '#adb2b2',
 							height: '10px',
 							borderRadius: '0.1rem'
 						}}
 						railStyle={{
 							height: '10px',
 							borderRadius: '0.1rem',
-							backgroundColor: '#070d13'
+							backgroundColor: '#adb2b2'
 						}}
 						handleStyle={{
-							height: '22px',
-							width: '5px',
+							height: '15px',
+							width: '3px',
+							backgroundColor: '#adb2b2',
 							opacity: '1',
 							border: 'none',
 							borderRadius: '0.1rem',
-							color: 'red',
 						}}
 					/>
 				</div>

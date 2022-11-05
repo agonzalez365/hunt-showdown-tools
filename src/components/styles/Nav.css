@@ -5,38 +5,35 @@ ul {
 }
 
 li {
-    display: inline-block;
-    padding: 0.5rem 2rem;
-
     list-style: none;
 }
 
-li.active {
-    background-color: var(--nav-active-bg-color);
-}
-
-li:not(.active) {
-    background-color: var(--nav-item-bg-color);
-}
-
-li:hover, li:hover > a{
-    cursor: pointer;
-    color: var(--text-highlight-color);
-}
-
-li:not(.active):hover {
-    background-color: var(--nav-item-hl-bg-color);
-}
-
-li.active:hover {
-    background-color: var(--nav-active-hl-bg-color);
-}
-
 a {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+
     text-decoration: none;
     color: var(--text-color);
 }
 
-.locked:hover, .locked:hover > a {
-    cursor: not-allowed;
+a.active {
+    background-color: var(--nav-active-bg-color);
 }
+
+a:not(.active) {
+    background-color: var(--nav-item-bg-color);
+}
+
+a:hover, a:hover > a{
+    cursor: pointer;
+    color: var(--text-highlight-color);
+}
+
+a:not(.active):hover {
+    background-color: var(--nav-item-hl-bg-color);
+}
+
+a.active:hover {
+    background-color: var(--nav-active-hl-bg-color);
+}
+
